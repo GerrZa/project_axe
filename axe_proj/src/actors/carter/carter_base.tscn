@@ -1,0 +1,314 @@
+[gd_scene load_steps=39 format=2]
+
+[ext_resource path="res://asset/actor/spr_player_reg_sheet.png" type="Texture" id=1]
+[ext_resource path="res://src/actors/carter/carter_base.gd" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 12, 16.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 12, 2 )
+
+[sub_resource type="Animation" id=28]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 1 ]
+}
+
+[sub_resource type="Animation" id=33]
+resource_name = "spr_player_anim_fall"
+length = 0.1
+step = 0.066
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 27 ]
+}
+
+[sub_resource type="Animation" id=27]
+resource_name = "spr_player_anim_idle"
+length = 0.792
+loop = true
+step = 0.066
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.066, 0.132, 0.198, 0.264, 0.33, 0.396, 0.462, 0.528, 0.594, 0.66, 0.726 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ]
+}
+
+[sub_resource type="Animation" id=32]
+resource_name = "spr_player_anim_jump"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 26 ]
+}
+
+[sub_resource type="Animation" id=29]
+resource_name = "spr_player_anim_pre_run"
+length = 0.198
+step = 0.066
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.066, 0.132 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 12, 13, 14 ]
+}
+
+[sub_resource type="Animation" id=30]
+resource_name = "spr_player_anim_run"
+length = 0.5
+loop = true
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 15, 16, 17, 18, 19, 20, 21, 22, 23, 24 ]
+}
+
+[sub_resource type="Animation" id=31]
+resource_name = "spr_player_anim_wallslide"
+length = 0.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 25 ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=34]
+animation = "spr_player_anim_fall"
+
+[sub_resource type="AnimationNodeAnimation" id=35]
+animation = "spr_player_anim_idle"
+
+[sub_resource type="AnimationNodeAnimation" id=36]
+animation = "spr_player_anim_jump"
+
+[sub_resource type="AnimationNodeAnimation" id=37]
+animation = "spr_player_anim_pre_run"
+
+[sub_resource type="AnimationNodeAnimation" id=38]
+animation = "spr_player_anim_run"
+
+[sub_resource type="AnimationNodeAnimation" id=39]
+animation = "spr_player_anim_wallslide"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=40]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=41]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=42]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=43]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=44]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=45]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=46]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=47]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=48]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=49]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=50]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=51]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=52]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=53]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=54]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=55]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=56]
+
+[sub_resource type="AnimationNodeStateMachine" id=23]
+states/spr_player_anim_fall/node = SubResource( 34 )
+states/spr_player_anim_fall/position = Vector2( 20.9412, -162.124 )
+states/spr_player_anim_idle/node = SubResource( 35 )
+states/spr_player_anim_idle/position = Vector2( 388.002, -30 )
+states/spr_player_anim_jump/node = SubResource( 36 )
+states/spr_player_anim_jump/position = Vector2( 388.355, -298.235 )
+states/spr_player_anim_pre_run/node = SubResource( 37 )
+states/spr_player_anim_pre_run/position = Vector2( 726.27, 73.6393 )
+states/spr_player_anim_run/node = SubResource( 38 )
+states/spr_player_anim_run/position = Vector2( 788.733, -162.07 )
+states/spr_player_anim_wallslide/node = SubResource( 39 )
+states/spr_player_anim_wallslide/position = Vector2( 49.7304, 91.8277 )
+transitions = [ "spr_player_anim_idle", "spr_player_anim_pre_run", SubResource( 40 ), "spr_player_anim_pre_run", "spr_player_anim_run", SubResource( 41 ), "spr_player_anim_pre_run", "spr_player_anim_idle", SubResource( 42 ), "spr_player_anim_run", "spr_player_anim_idle", SubResource( 43 ), "spr_player_anim_idle", "spr_player_anim_jump", SubResource( 44 ), "spr_player_anim_pre_run", "spr_player_anim_jump", SubResource( 45 ), "spr_player_anim_run", "spr_player_anim_jump", SubResource( 46 ), "spr_player_anim_jump", "spr_player_anim_fall", SubResource( 47 ), "spr_player_anim_fall", "spr_player_anim_idle", SubResource( 48 ), "spr_player_anim_wallslide", "spr_player_anim_idle", SubResource( 49 ), "spr_player_anim_wallslide", "spr_player_anim_fall", SubResource( 50 ), "spr_player_anim_wallslide", "spr_player_anim_jump", SubResource( 51 ), "spr_player_anim_idle", "spr_player_anim_wallslide", SubResource( 52 ), "spr_player_anim_fall", "spr_player_anim_wallslide", SubResource( 53 ), "spr_player_anim_jump", "spr_player_anim_run", SubResource( 54 ), "spr_player_anim_fall", "spr_player_anim_run", SubResource( 55 ), "spr_player_anim_run", "spr_player_anim_fall", SubResource( 56 ) ]
+start_node = "spr_player_anim_idle"
+graph_offset = Vector2( -292, -362 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=15]
+
+[sub_resource type="RectangleShape2D" id=25]
+extents = Vector2( 11.5, 7 )
+
+[sub_resource type="CapsuleShape2D" id=26]
+radius = 8.0
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+collision_mask = 4
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+player_max_speed = 280.0
+player_first_speed = 90.0
+air_speed = 290.0
+change_speed_delay = 0.1
+jump_f = 550.0
+wall_jump_f = 450.0
+wall_slide_speed = 35.0
+reg_grav = 2250.0
+up_grav = 1850.0
+super_grav = 11000.0
+wall_grav = 10.0
+slide_dur = 0.15
+slide_speed = 650.0
+slide_cooldown = 0.15
+attack_cd = 0.25
+attack_onair_time = 0.2
+facing_dir = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 0.5 )
+shape = SubResource( 1 )
+
+[node name="ground_check" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ground_check"]
+position = Vector2( 0, 17 )
+shape = SubResource( 2 )
+
+[node name="fliper" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="fliper"]
+position = Vector2( -22, -18 )
+texture = ExtResource( 1 )
+centered = false
+hframes = 28
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="fliper/Sprite"]
+root_node = NodePath("../..")
+playback_speed = 1.5
+anims/RESET = SubResource( 28 )
+anims/spr_player_anim_fall = SubResource( 33 )
+anims/spr_player_anim_idle = SubResource( 27 )
+anims/spr_player_anim_jump = SubResource( 32 )
+anims/spr_player_anim_pre_run = SubResource( 29 )
+anims/spr_player_anim_run = SubResource( 30 )
+anims/spr_player_anim_wallslide = SubResource( 31 )
+
+[node name="AnimationTree" type="AnimationTree" parent="fliper/Sprite"]
+tree_root = SubResource( 23 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 15 )
+
+[node name="attack_hitbox_pivot" type="Node2D" parent="."]
+
+[node name="attack_area" type="Area2D" parent="attack_hitbox_pivot"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack_hitbox_pivot/attack_area"]
+position = Vector2( 5.5, 0 )
+shape = SubResource( 25 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="attack_hitbox_pivot/attack_area"]
+position = Vector2( 19, 0 )
+shape = SubResource( 26 )
+
+[node name="change_speed_timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="slide_cd" type="Timer" parent="."]
+one_shot = true
+
+[node name="dur_slide" type="Timer" parent="."]
+one_shot = true
+
+[node name="slidedelay" type="Timer" parent="."]
+one_shot = true
+
+[node name="Rwall" type="RayCast2D" parent="."]
+enabled = true
+exclude_parent = false
+cast_to = Vector2( 12.1, 0 )
+collision_mask = 4
+
+[node name="Lwall" type="RayCast2D" parent="."]
+enabled = true
+exclude_parent = false
+cast_to = Vector2( -12.1, 0 )
+collision_mask = 4
+
+[node name="jumpdelay" type="Timer" parent="."]
+
+[node name="_attack_timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="ground_check" to="." method="_on_ground_check_body_entered"]
+[connection signal="timeout" from="slidedelay" to="." method="_on_slidedelay_timeout"]
+[connection signal="timeout" from="jumpdelay" to="." method="_on_jumpdelay_timeout"]
